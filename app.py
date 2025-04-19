@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -14,11 +15,12 @@ def borrow_form():
 
 @app.route('/borrow', methods=['POST'])
 def borrow_submit():
-    user_id = request.form['user_id']
-    book_id = request.form['book_id']
-    borrow_date = request.form['borrow_date']
-    return_date = request.form['return_date']
+    user_id = request.form.get('user_id')
+    book_id = request.form.get('book_id')
+    borrow_date = request.form.get('borrow_date')
+    return_date = request.form.get('return_date')
 
+    # 寫入 SQLite
     conn = sqlite3.connect('library.db')
     cursor = conn.cursor()
     cursor.execute('''
@@ -28,7 +30,8 @@ def borrow_submit():
     conn.commit()
     conn.close()
 
-    return f"借書成功！使用者 {user_id} 借了書 {book_id}，請在 {return_date} 前歸還。"
+    # 顯示成功頁，並在 borrow_success.html 中設定 3 秒後跳回首頁
+    return render_template('borrow_success.html', user_id=user_id, book_id=book_id, return_date=return_date)
 
 # ✅ 顯示所有借書紀錄
 @app.route('/records')

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>借書成功</title>
+  <meta http-equiv="refresh" content="3;url=/" />
+  <style>
+    body {
+      font-family: "微軟正黑體", sans-serif;
+      background-color: #f0fff0;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .msg {
+      font-size: 24px;
+      color: #2e8b57;
+      margin-bottom: 10px;
+    }
+    .note {
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="msg">✅ 借書成功！</div>
+  <div>使用者 {{ user_id }} 借了書籍 {{ book_id }}，請在 {{ return_date }} 前歸還。</div>
+  <div class="note">3 秒後將返回首頁...</div>
+</body>
+</html>
