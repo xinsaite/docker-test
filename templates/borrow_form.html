@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>借書表單</title>
+</head>
+<body>
+  <h2>借書表單</h2>
+  <form action="/borrow" method="POST">
+    <label for="user-id">使用者ID</label>
+    <input type="text" id="user-id" name="user_id" required><br>
+
+    <label for="book-id">書本ID</label>
+    <input type="text" id="book-id" name="book_id" required><br>
+
+    <label for="borrow-date">借書日期</label>
+    <input type="date" id="borrow-date" name="borrow_date" required><br>
+
+    <label for="return-date">應還日期</label>
+    <input type="date" id="return-date" name="return_date" required><br>
+
+    <button type="submit">送出</button>
+  </form>
+</body>
+</html>
