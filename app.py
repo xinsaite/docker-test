@@ -28,5 +28,4 @@ def borrow_submit():
     return f"借書成功！使用者 {user_id} 借了書 {book_id}，請在 {return_date} 前歸還。"
 
 if __name__ == '__main__':
-    # app.run(debug=True, host='0.0.0.0')
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
