@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>借書紀錄</title>
+</head>
+<body>
+  <h2>所有借書紀錄</h2>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>使用者ID</th>
+      <th>書本ID</th>
+      <th>借書日期</th>
+      <th>應還日期</th>
+    </tr>
+    {% for record in records %}
+    <tr>
+      <td>{{ record[0] }}</td>
+      <td>{{ record[1] }}</td>
+      <td>{{ record[2] }}</td>
+      <td>{{ record[3] }}</td>
+      <td>{{ record[4] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br>
+  <a href="/">返回首頁</a>
+</body>
+</html>

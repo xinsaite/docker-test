@@ -3,21 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <title>借書表單</title>
+  <style>
+    body {
+      font-family: "微軟正黑體", sans-serif;
+      background-color: #f5f5f5;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      background-color: white;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+      width: 100%;
+      padding: 8px 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
   <h2>借書表單</h2>
   <form action="/borrow" method="POST">
     <label for="user-id">使用者ID</label>
-    <input type="text" id="user-id" name="user_id" required><br>
+    <input type="text" id="user-id" name="user_id" required>
 
     <label for="book-id">書本ID</label>
-    <input type="text" id="book-id" name="book_id" required><br>
+    <input type="text" id="book-id" name="book_id" required>
 
     <label for="borrow-date">借書日期</label>
-    <input type="date" id="borrow-date" name="borrow_date" required><br>
+    <input type="date" id="borrow-date" name="borrow_date" required>
 
     <label for="return-date">應還日期</label>
-    <input type="date" id="return-date" name="return_date" required><br>
+    <input type="date" id="return-date" name="return_date" required>
 
     <button type="submit">送出</button>
   </form>

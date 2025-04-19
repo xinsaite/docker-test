@@ -3,11 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>書籍租借系統</title>
+  <style>
+    body {
+      font-family: "微軟正黑體", sans-serif;
+      background-color: #f0f0f0;
+      padding: 50px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: inline-block;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
   <h1>歡迎來到書籍租借系統</h1>
   <form action="/borrow">
     <button type="submit">前往借書表單</button>
   </form>
+<form action="/records">
+  <button type="submit">查看借書紀錄</button>
+</form>
+
 </body>
 </html>
